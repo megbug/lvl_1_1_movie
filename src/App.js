@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Data from './components/Data.js';
+import movies from './movies';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<div className="Carddisplay">
+				{movies.map((elt) =>
+					<Data
+						name={elt.title}
+						year={elt.year}
+						regie={elt.director}
+						duration={elt.duration}
+						critics={elt.rate}
+						genre={elt.genre}
+					/>
+				)}
+			</div>
+		</div>
+	);
 }
 
 export default App;
